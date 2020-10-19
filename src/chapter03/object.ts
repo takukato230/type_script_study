@@ -23,3 +23,25 @@ class Person {
 p = new Person('matt', 'smith')
 
 console.log(p)
+
+// その他のオブジェクトの形
+
+let questionA : {
+  b: number
+  // 以下の記述をするとcにはundefinedが入ってもよくなる
+  c?: string
+  [key:number]: boolean
+}
+
+questionA = {b: 1}
+console.log(questionA)
+questionA = {b: 1, 10: true}
+console.log(questionA)
+
+let user : {
+  readonly firstName: string
+} = {
+  firstName: 'add'
+}
+
+console.log(user.firstName)
