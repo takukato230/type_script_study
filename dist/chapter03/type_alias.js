@@ -1,7 +1,5 @@
 "use strict";
 /**
- *
- *
  * @param {boolean} isTrue
  * @returns string | null
  */
