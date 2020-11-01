@@ -11,4 +11,4 @@ let mySecondLanguage = Language['English'];
 console.log(myFirstLanguage);
 console.log(mySecondLanguage);
 let constA = Language.English;
-console.log(constA);
+console.log(`constA = ${constA}`);
