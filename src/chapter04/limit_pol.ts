@@ -55,3 +55,19 @@ let square: Square = {
 }
 
 logPerimeter(square)
+
+
+function fill(length: number, value: string): string[] {
+  return Array.from({ length }, () => value)
+}
+
+function call<T extends unknown[], R>(
+  f: (...args: T) => R,
+  ...args: T
+): R {
+  return f(...args)
+}
+
+let a = call(fill, 10, 'a')
+
+console.log(`a=${a}`)
