@@ -66,7 +66,7 @@ let stringMap = map(['alice', 'bob', 'alias'], _=>_.replace('b', 'c'))
 console.log(`stringMap result=${stringMap}`)
 
 // DOMイベントを表現する型エイリアス
-type MyEvent<T> = {
+type MyEvent<T = HTMLElement> = {
   target: T
   type: string
 }
