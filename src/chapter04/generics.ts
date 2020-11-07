@@ -64,3 +64,21 @@ function map<T, U>(array: T[], f: (item: T) => U): U[] {
 
 let stringMap = map(['alice', 'bob', 'alias'], _=>_.replace('b', 'c'))
 console.log(`stringMap result=${stringMap}`)
+
+// DOMイベントを表現する型エイリアス
+type MyEvent<T> = {
+  target: T
+  type: string
+}
+
+// 作成した型エイリアスを内包した型エイリアス
+type TimedEvent<T> = {
+  event: MyEvent<T>
+  from: Date
+  to: Date
+}
+
+// 関数にも利用が可能
+function triggerEvent<T>(event: MyEvent<T>): void {
+  // ...
+}
