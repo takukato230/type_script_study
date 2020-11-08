@@ -68,6 +68,6 @@ function call<T extends unknown[], R>(
   return f(...args)
 }
 
-let a = call(fill, 10, 'a')
+let callA = call(fill, 10, 'a')
 
-console.log(`a=${a}`)
+console.log(`callA=${callA}`)
