@@ -17,3 +17,11 @@ let square = {
     sideLength: 3
 };
 logPerimeter(square);
+function fill(length, value) {
+    return Array.from({ length }, () => value);
+}
+function call(f, ...args) {
+    return f(...args);
+}
+let callA = call(fill, 10, 'a');
+console.log(`callA=${callA}`);
