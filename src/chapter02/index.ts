@@ -1,9 +1,9 @@
-let a = 1 + 2
-let b = a + 3
-let c = {
+const a = 1 + 2
+const b = a + 3
+const c = {
   apple: a,
-  banana: b
+  banana: b,
 }
-let d = c.apple * 4
+const d = c.apple * 4
 
-console.log(d);
+console.log(d)

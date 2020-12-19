@@ -1,12 +1,12 @@
 enum Language {
   English,
   Spanish,
-  Russian
+  Russian,
 }
 
 // enumからの値取得方法
-let myFirstLanguage = Language.Russian
-let mySecondLanguage = Language['English']
+const myFirstLanguage = Language.Russian
+const mySecondLanguage = Language.English
 
 console.log(myFirstLanguage)
 console.log(mySecondLanguage)
@@ -19,9 +19,9 @@ console.log(mySecondLanguage)
 const enum ConstLanguage {
   English,
   Spanish,
-  Russian
+  Russian,
 }
 
-let constA = Language.English
+const constA = Language.English
 
 console.log(`constA = ${constA}`)

@@ -14,26 +14,20 @@ type InnerNode = TreeNode & {
   children: [TreeNode] | [TreeNode, TreeNode]
 }
 
-
-function mapNode<T extends TreeNode>(
-  node: T,
-  f: (value: string) => string
-): T {
+function mapNode<T extends TreeNode>(node: T, f: (value: string) => string): T {
   return {
     ...node,
-    value: f(node.value)
+    value: f(node.value),
   }
 }
 
-let aNode: TreeNode = { value: 'a' }
-let bNode: LeafNode = { value: 'b', isLeaf: true }
-let cNode: InnerNode = { value: 'c', children: [bNode] }
+const aNode: TreeNode = { value: 'a' }
+const bNode: LeafNode = { value: 'b', isLeaf: true }
+const cNode: InnerNode = { value: 'c', children: [bNode] }
 
-let aNode1 = mapNode(aNode, _ => _.toUpperCase())
-let bNode1 = mapNode(bNode, _ => _.toUpperCase())
-let cNode1 = mapNode(cNode, _ => _.toUpperCase())
-
-
+const aNode1 = mapNode(aNode, (_) => _.toUpperCase())
+const bNode1 = mapNode(bNode, (_) => _.toUpperCase())
+const cNode1 = mapNode(cNode, (_) => _.toUpperCase())
 
 type HasSides = {
   numberOfSides: number
@@ -43,31 +37,29 @@ type SidesHaveLength = {
   sideLength: number
 }
 
-function logPerimeter<Shape extends HasSides & SidesHaveLength>(s: Shape): Shape {
+function logPerimeter<Shape extends HasSides & SidesHaveLength>(
+  s: Shape
+): Shape {
   console.log(s.numberOfSides * s.sideLength)
   return s
 }
 
 type Square = HasSides & SidesHaveLength
-let square: Square = {
+const square: Square = {
   numberOfSides: 4,
-  sideLength: 3
+  sideLength: 3,
 }
 
 logPerimeter(square)
-
 
 function fill(length: number, value: string): string[] {
   return Array.from({ length }, () => value)
 }
 
-function call<T extends unknown[], R>(
-  f: (...args: T) => R,
-  ...args: T
-): R {
+function call<T extends unknown[], R>(f: (...args: T) => R, ...args: T): R {
   return f(...args)
 }
 
-let callA = call(fill, 10, 'a')
+const callA = call(fill, 10, 'a')
 
 console.log(`callA=${callA}`)

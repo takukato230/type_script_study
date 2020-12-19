@@ -3,4 +3,4 @@ function fancyDate(this: Date) {
 }
 
 // 呼び出し時にDateのバインドを強制させている
-console.log(fancyDate.call(new Date))
+console.log(fancyDate.call(new Date()))

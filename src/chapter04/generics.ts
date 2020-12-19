@@ -1,12 +1,11 @@
-
 // Filterの型付け
 type Filter = {
   <T>(array: T[], f: (item: T) => boolean): T[]
 }
 
 // Filterの実装
-let filter: Filter = (array, f) => {
-  let result = []
+const filter: Filter = (array, f) => {
+  const result = []
   for (const e of array) {
     if (f(e)) {
       result.push(e)
@@ -15,17 +14,15 @@ let filter: Filter = (array, f) => {
   return result
 }
 
-let names = [
-  {firstName: 'beth'},
-  {firstName: 'bob'},
-  {firstName: 'alice'}
+const names = [
+  { firstName: 'beth' },
+  { firstName: 'bob' },
+  { firstName: 'alice' },
 ]
 
-const firstNameWithB = filter(names, _ => _.firstName.startsWith('b'))
+const firstNameWithB = filter(names, (_) => _.firstName.startsWith('b'))
 
-console.log(`firstNameWithB result = ${firstNameWithB.map(_=>_.firstName)}`)
-
-
+console.log(`firstNameWithB result = ${firstNameWithB.map((_) => _.firstName)}`)
 
 type FilterT<T> = {
   (array: T[], f: (item: T) => boolean): T[]
@@ -33,8 +30,8 @@ type FilterT<T> = {
 
 // 型エイリアスにジェネリックを利用すると
 // この実装時点でジェネリックの型を宣言する必要が出てくる
-let filterNumber: FilterT<number> = (array, f) => {
-  let result = []
+const filterNumber: FilterT<number> = (array, f) => {
+  const result = []
   for (const item of array) {
     if (f(item)) {
       result.push(item)
@@ -43,26 +40,24 @@ let filterNumber: FilterT<number> = (array, f) => {
   return result
 }
 
-
-const filterNumberWith123 = filterNumber([1,2,3], _=>_%2===0)
+const filterNumberWith123 = filterNumber([1, 2, 3], (_) => _ % 2 === 0)
 
 console.log(`filterNumberWith123=${filterNumberWith123}`)
 
-
 /**
  * mapをジェネリックを使用して自作した関数
- * @param array 
- * @param f 
+ * @param array
+ * @param f
  */
 function map<T, U>(array: T[], f: (item: T) => U): U[] {
-  let result = []
+  const result = []
   for (const item of array) {
     result.push(f(item))
   }
   return result
 }
 
-let stringMap = map(['alice', 'bob', 'alias'], _=>_.replace('b', 'c'))
+const stringMap = map(['alice', 'bob', 'alias'], (_) => _.replace('b', 'c'))
 console.log(`stringMap result=${stringMap}`)
 
 // DOMイベントを表現する型エイリアス

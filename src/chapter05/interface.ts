@@ -8,5 +8,5 @@ interface Sushi extends Food {
 }
 
 interface Cake extends Food {
-  sweet: boolean 
+  sweet: boolean
 }

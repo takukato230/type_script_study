@@ -1,4 +1,3 @@
-
 // 呼び出しシグニチャの省略記法
 type LogT = (message: string, userID?: string) => void
 
@@ -12,7 +11,7 @@ type Reserve = {
   (from: Date, destination: string): string
 }
 
-// reserve  
+// reserve
 // Reserveが実装される際にはそれらがどのように呼び出されたかチェックする必要がある
 // let reserve: Reserve = (
 //   from: Date,
@@ -33,7 +32,7 @@ type WarnUser = {
 
 // function warnUser(waring: string) {
 //   if (warnUser.wasCalled) {
-//     return 
+//     return
 //   }
 //   warnUser.wasCalled = true
 //   alert(warning)

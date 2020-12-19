@@ -25,8 +25,8 @@ function bFunc() {
  *
  */
 function cFunc() {
-  let a = 2 + 2
-  let b = a * a
+  const a = 2 + 2
+  const b = a * a
 }
 
 /**

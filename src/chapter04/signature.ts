@@ -2,23 +2,20 @@
 // この型定義ではデフォルト値を表現することはできない
 type LogType = (message: string, userID?: string) => void
 
-let logType: LogType = (
+const logType: LogType = (
   // すでに呼び出しシグニチャで定義されているため、
   // パラメータに再度型付けする必要はない
   message,
   userID = 'Not signed in'
 ) => {
-  let time = new Date().toISOString()
+  const time = new Date().toISOString()
   console.log(time, message, userID)
 }
 
-function times(
-  f: (index: number) => void,
-  n: number
-) {
-  for(let i = 0; i < n; i++) {
+function times(f: (index: number) => void, n: number) {
+  for (let i = 0; i < n; i++) {
     f(i)
   }
 }
 
-times(n => console.log(n), 4)
+times((n) => console.log(n), 4)

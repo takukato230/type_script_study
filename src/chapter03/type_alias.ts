@@ -6,13 +6,12 @@ type PersonHavenAge = {
 }
 
 // 合併、交差
-type Cat01 = { name: string, purrs: boolean }
-type Dog = { name: string, barks: boolean, wags: boolean }
+type Cat01 = { name: string; purrs: boolean }
+type Dog = { name: string; barks: boolean; wags: boolean }
 // 合併
 type CatOrDogOrBoth = Cat01 | Dog
 // 交差
 type CatAndDog = Cat01 & Dog
-
 
 /**
  * @param {boolean} isTrue
