@@ -15,7 +15,7 @@ class CustomSet {
     this.customSet.add(value)
     return this
   }
-  // addAlow = (value: number) =>
+  // addAllow = (value: number) =>
   //   this.customSet.add(value)
 }
 
@@ -27,7 +27,7 @@ class MutableCustomSet extends CustomSet {
    * @memberof MutableCustomSet
    */
   delete = (value: number) =>
-    this.mutableCustomSet.size == 0 || this.mutableCustomSet.delete(value)
+    this.mutableCustomSet.size === 0 || this.mutableCustomSet.delete(value)
 }
 
 const customSet = new CustomSet()
